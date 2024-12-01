@@ -25,6 +25,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
+          platforms: linux/amd64,linux/arm64
           push: true
-          context: ./nodejs/22
+          context: .
+          file: ./node/22-alpine/Dockerfile
           tags: hodfords/node:22-alpine
